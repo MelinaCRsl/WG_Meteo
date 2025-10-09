@@ -13,57 +13,67 @@ body {
 }
 
 .hud-wrapper {
-  position: relative;
+  display: grid;
+  grid-template-rows: 80px 1fr 140px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title title"
+    "icon temps"
+    "footer footer";
   width: 100vw;
   height: 100vh;
   background-image: url('assets/img/framemeteo.png');
   background-size: cover;
   background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px 20px;
+  padding: 20px;
   box-sizing: border-box;
 }
 
 /* 🏷️ Titre */
 .hud-title {
+  grid-area: title;
   font-size: 3em;
-  text-shadow: 0 0 10px #00ffcc;
+  text-align: center;
   margin: 0;
+  align-self: center;
+  justify-self: center;
+  text-shadow: 0 0 10px #00ffcc;
 }
 
-/* 🌞 Icône météo principale */
+/* 🌞 Icône météo */
 .weather-icon {
-  width: 140px;
-  margin-top: 20px;
+  grid-area: icon;
+  width: 160px;
+  align-self: center;
+  justify-self: center;
   filter: drop-shadow(0 0 6px white);
 }
 
 /* 🌡️ Températures */
 .temps {
+  grid-area: temps;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 100px;
-  margin-top: 20px;
+  gap: 30px;
 }
 
 .temp-block {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 15px;
 }
 
 .temp-label {
   font-size: 1.2em;
-  margin-bottom: 5px;
+  margin: 0;
 }
 
 .temp-value {
   font-size: 3em;
   text-shadow: 0 0 8px white;
-  margin-bottom: 5px;
+  margin: 0;
 }
 
 .thermo {
@@ -72,27 +82,29 @@ body {
 
 /* ⏳ Bloc Previous */
 .timeline {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 10px;
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .timeline-title {
   font-size: 1.5em;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-shadow: 0 0 6px #00ffcc;
 }
 
 .timeline-icon {
-  width: 80px;
-  margin-bottom: 10px;
+  width: 70px;
+  margin-bottom: 5px;
   filter: drop-shadow(0 0 6px white);
 }
 
 .timeline-temps {
   display: flex;
-  justify-content: center;
-  gap: 60px;
+  gap: 40px;
   font-size: 2em;
   text-shadow: 0 0 6px white;
 }
