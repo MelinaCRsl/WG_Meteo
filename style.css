@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Digital7';
+  src: url('assets/fonts/digital-7.ttf') format('truetype');
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -7,47 +12,41 @@ body {
   overflow: hidden;
 }
 
-@font-face {
-  font-family: 'Digital7';
-  src: url('assets/fonts/digital-7.ttf') format('truetype');
-}
-
 .hud-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('assets/img/framemeteo.png');
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  height: 100vh;
-  padding: 20px;
+  align-items: center;
+  padding: 40px 20px;
   box-sizing: border-box;
 }
 
+/* 🏷️ Titre */
 .hud-title {
-  font-size: 2.5em;
+  font-size: 3em;
+  text-shadow: 0 0 10px #00ffcc;
   margin: 0;
-  text-shadow: 0 0 8px #00ffcc;
 }
 
-.frame-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: 0;
-}
-
+/* 🌞 Icône météo principale */
 .weather-icon {
-  width: 120px;
-  margin: 20px 0;
+  width: 140px;
+  margin-top: 20px;
   filter: drop-shadow(0 0 6px white);
 }
 
+/* 🌡️ Températures */
 .temps {
   display: flex;
-  gap: 60px;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 20px;
 }
 
 .temp-block {
@@ -58,37 +57,42 @@ body {
 
 .temp-label {
   font-size: 1.2em;
-  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .temp-value {
-  font-size: 2.5em;
-  text-shadow: 0 0 6px white;
+  font-size: 3em;
+  text-shadow: 0 0 8px white;
+  margin-bottom: 5px;
 }
 
 .thermo {
   width: 40px;
 }
 
+/* ⏳ Bloc Previous */
 .timeline {
+  width: 100%;
   text-align: center;
   margin-bottom: 10px;
 }
 
 .timeline-title {
-  font-size: 1.2em;
-  margin-bottom: 5px;
+  font-size: 1.5em;
+  margin-bottom: 10px;
   text-shadow: 0 0 6px #00ffcc;
 }
 
 .timeline-icon {
-  width: 60px;
-  margin-bottom: 5px;
+  width: 80px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 6px white);
 }
 
 .timeline-temps {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  font-size: 1.5em;
+  gap: 60px;
+  font-size: 2em;
+  text-shadow: 0 0 6px white;
 }
