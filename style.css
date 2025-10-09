@@ -38,7 +38,7 @@ body {
   position: absolute;
   top: 120px;
   left: 60px;
-  width: 140px;
+  width: 160px;
   filter: drop-shadow(0 0 6px white);
 }
 
@@ -49,24 +49,20 @@ body {
   right: 60px;
   display: flex;
   flex-direction: row;
-  gap: 60px;
+  align-items: center;
+  gap: 80px;
 }
 
 .temp-block {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 
 .temp-value {
-  font-size: 2.8em;
+  font-size: 3em;
   text-shadow: 0 0 8px white;
-  margin-bottom: 5px;
-}
-
-.temp-label {
-  font-size: 1em;
-  margin-bottom: 5px;
+  margin: 0;
 }
 
 .thermo {
