@@ -1,76 +1,69 @@
-// 🌍 Miami coordinates for RP realism
-const latitude = 25.7617;
-const longitude = -80.1918;
+// 📍 Coordonnées RP de Winter's Gate
+const latitude = 45.3;
+const longitude = 1.3;
 
-// 🕰️ SL Time (Pacific Time / GMT-8)
-const slTime = new Date().toLocaleString("en-US", {
-  timeZone: "America/Los_Angeles",
-  hour: "2-digit",
-  hour12: false
-});
-const hourSL = parseInt(slTime);
-const timeOfDay = (hourSL >= 6 && hourSL < 18) ? "day" : "night";
+// 🔗 API météo
+const API_URL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
 
-// 🔧 Default unit based on RP zone
-let unit = "fahrenheit";
+// 🖼️ Icônes météo selon code Open-Meteo
+const iconMap = {
+  0: "dayclear.png",         // ciel clair
+  1: "daycloudycloudy.png",  // partiellement nuageux
+  45: "fog.png",             // brouillard
+  48: "fog.png",             // brouillard givrant
+  61: "rain.png",            // pluie légère
+  71: "snow.png",            // neige légère
+  93: "nightclear.png",      // mode nuit ?
+  94: "nightcloudy.png",     // mode nuit ?
+  95: "storm.png",           // orage
+  99: "tornado.png"          // tornade ?
+  // ajouter plus d'icônes pour plus de variété à faire
+};
 
-// 🧠 Optional override from settings or URL
-const userUnit = new URLSearchParams(window.location.search).get("unit");
-if (userUnit === "celsius") unit = "celsius";
+// 🔁 Mise à jour du HUD météo
+async function updateWeatherHUD() {
+  try {
+    const response = await fetch(API_URL);
+    const data = await response.json();
 
-// 🎨 Apply theme and unit class
-document.body.classList.add("sorority");
-document.body.classList.add(unit);
+    const weather = data.current_weather;
+    const temperature = weather.temperature;
+    const code = weather.weathercode;
 
-// ⏰ Weather updates every 6 hours SLT
-const updateHours = [0, 6, 12, 18];
+    // 🌡️ Températures min/max simulées
+    const tempMin = (temperature - 2).toFixed(1);
+    const tempMax = (temperature + 2).toFixed(1);
 
-if (updateHours.includes(hourSL)) {
-  const apiURL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`;
+    // 🖼️ Icône météo
+    const icon = iconMap[code] || "default.png";
 
-  fetch(apiURL)
-    .then(response => response.json())
-    .then(data => {
-      const weather = data.current_weather;
-      const temperature = weather.temperature;
-      const code = weather.weathercode;
+    // 🔄 Mise à jour DOM
+    const setText = (id, value) => {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    };
 
-      // 🔁 Map Open-Meteo codes to RP conditions
-      const conditionMap = {
-        0: "Clear", 1: "Cloudy", 2: "Cloudy", 3: "Cloudy",
-        45: "Fog", 48: "Fog",
-        51: "Rain", 53: "Rain", 55: "Rain", 61: "Rain", 63: "Rain", 65: "Rain",
-        71: "Snow", 73: "Snow", 75: "Snow",
-        80: "Showers", 81: "Showers", 82: "Showers",
-        95: "Storm", 96: "Storm", 99: "Tornado"
-      };
+    const setImage = (id, src) => {
+      const el = document.getElementById(id);
+      if (el) el.src = src;
+    };
 
-      const condition = conditionMap[code] || "Clear";
+    setImage("weather-icon", `assets/img/${icon}`);
+    setText("temp-min", `${tempMin}°`);
+    setText("temp-max", `${tempMax}°`);
 
-      // 🌡️ Convert temperature if needed
-      let displayTemp = temperature;
-      let unitIcon = "fahrenheit.png";
+    setImage("prev-icon", `assets/img/${icon}`);
+    setText("prev-min", `${(temperature - 3).toFixed(1)}°`);
+    setText("prev-max", `${(temperature + 1).toFixed(1)}°`);
 
-      if (unit === "celsius") {
-        displayTemp = (temperature - 32) * 5 / 9;
-        unitIcon = "celcius.png";
-      }
-
-      // 🖼️ Update UI
-      document.getElementById("condition").textContent = condition;
-      document.getElementById("temperature").textContent = Math.round(displayTemp) + "°";
-      document.getElementById("meteo-icon").src = `assets/img/${timeOfDay}${condition.toLowerCase()}.png`;
-      document.getElementById("unit-icon").src = `assets/img/${unitIcon}`;
-      document.getElementById("sl-clock").textContent = `SLT: ${hourSL}h`;
-    })
-    .catch(error => {
-      console.error("Weather error:", error);
-      document.getElementById("condition").textContent = "Unavailable";
-      document.getElementById("temperature").textContent = "--°";
-      document.getElementById("meteo-icon").src = `assets/img/${timeOfDay}clear.png`;
-      document.getElementById("unit-icon").src = `assets/img/fahrenheit.png`;
-      document.getElementById("sl-clock").textContent = `SLT: --h`;
-    });
-} else {
-  document.getElementById("sl-clock").textContent = `SLT: ${hourSL}h`;
+    console.log("✅ Météo mise à jour depuis Open-Meteo");
+  } catch (error) {
+    console.error("❌ Erreur API Open-Meteo :", error);
+  }
 }
+
+// 🚀 Lancement au chargement
+document.addEventListener("DOMContentLoaded", updateWeatherHUD);
+
+// ⏱️ Mise à jour toutes les 15 minutes
+setInterval(updateWeatherHUD, 15 * 60 * 1000);

@@ -3,26 +3,27 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Winter's Gate Weather</title>
+		<title>WG Météo HUD</title>
 		<link rel="stylesheet" href="style.css" />
+		<script defer src="script.js"></script>
 	</head>
 	<body>
 		<div class="hud-wrapper">
-			<!-- 🖼️ Frame principale -->
+			<!-- 🖼️ Frame principal -->
 			<img src="assets/img/framemeteo.png" alt="WG Frame" class="frame-bg" />
 			<!-- 🧩 Overlay météo -->
 			<div class="overlay">
 				<h1 class="hud-title">Winter's Gate Weather</h1>
-				<img src="assets/img/daysunny.png" alt="Weather Icon" class="weather-icon" />
+				<img id="weather-icon" src="assets/img/default.png" alt="Weather Icon" class="weather-icon" />
 				<div class="temps">
 					<div class="temp-block">
 						<p class="temp-label">MIN</p>
-						<p class="temp-value" id="temp-min">71.6°</p>
+						<p class="temp-value" id="temp-min">--°</p>
 						<img src="assets/img/farenheit_mini.png" class="thermo" />
 					</div>
 					<div class="temp-block">
 						<p class="temp-label">MAX</p>
-						<p class="temp-value" id="temp-max">80.6°</p>
+						<p class="temp-value" id="temp-max">--°</p>
 						<img src="assets/img/farenheit_max.png" class="thermo" />
 					</div>
 				</div>
@@ -32,10 +33,10 @@
 				<img src="assets/img/frameprev.png" alt="Previous Frame" class="frame-prev" />
 				<div class="timeline-overlay">
 					<p class="timeline-title">PREVIOUS (6 NEXT HOURS)</p>
-					<img src="assets/img/daycloudy.png" class="timeline-icon" />
+					<img id="prev-icon" src="assets/img/default.png" class="timeline-icon" />
 					<div class="timeline-temps">
-						<p id="prev-min">71.6°</p>
-						<p id="prev-max">80.6°</p>
+						<p id="prev-min">--°</p>
+						<p id="prev-max">--°</p>
 					</div>
 				</div>
 			</div>
