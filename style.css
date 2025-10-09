@@ -9,6 +9,7 @@ body {
 }
 
 .hud-wrapper {
+	max-height: 1024px;
 	position: relative;
 	width: 100vw;
 	height: 100vh;
