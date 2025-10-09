@@ -7,6 +7,11 @@ body {
   overflow: hidden;
 }
 
+@font-face {
+  font-family: 'Digital7';
+  src: url('assets/fonts/digital-7.ttf') format('truetype');
+}
+
 .hud-wrapper {
   display: flex;
   flex-direction: column;
@@ -21,6 +26,16 @@ body {
   font-size: 2.5em;
   margin: 0;
   text-shadow: 0 0 8px #00ffcc;
+}
+
+.frame-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .weather-icon {
