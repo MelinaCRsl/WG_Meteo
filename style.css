@@ -13,67 +13,60 @@ body {
 }
 
 .hud-wrapper {
-  display: grid;
-  grid-template-rows: 80px 1fr 140px;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "title title"
-    "icon temps"
-    "footer footer";
+  position: relative;
   width: 100vw;
   height: 100vh;
   background-image: url('assets/img/framemeteo.png');
   background-size: cover;
   background-position: center;
-  padding: 20px;
   box-sizing: border-box;
 }
 
 /* 🏷️ Titre */
 .hud-title {
-  grid-area: title;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 3em;
-  text-align: center;
-  margin: 0;
-  align-self: center;
-  justify-self: center;
   text-shadow: 0 0 10px #00ffcc;
+  margin: 0;
 }
 
-/* 🌞 Icône météo */
+/* 🌞 Icône météo principale */
 .weather-icon {
-  grid-area: icon;
-  width: 160px;
-  align-self: center;
-  justify-self: center;
+  position: absolute;
+  top: 120px;
+  left: 60px;
+  width: 140px;
   filter: drop-shadow(0 0 6px white);
 }
 
-/* 🌡️ Températures */
+/* 🌡️ Températures min/max */
 .temps {
-  grid-area: temps;
+  position: absolute;
+  top: 140px;
+  right: 60px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
+  flex-direction: row;
+  gap: 60px;
 }
 
 .temp-block {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 15px;
-}
-
-.temp-label {
-  font-size: 1.2em;
-  margin: 0;
 }
 
 .temp-value {
-  font-size: 3em;
+  font-size: 2.8em;
   text-shadow: 0 0 8px white;
-  margin: 0;
+  margin-bottom: 5px;
+}
+
+.temp-label {
+  font-size: 1em;
+  margin-bottom: 5px;
 }
 
 .thermo {
@@ -82,29 +75,36 @@ body {
 
 /* ⏳ Bloc Previous */
 .timeline {
-  grid-area: footer;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 260px;
+  height: 140px;
+  background-image: url('assets/img/frameprev.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
 }
 
 .timeline-title {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-bottom: 5px;
   text-shadow: 0 0 6px #00ffcc;
 }
 
 .timeline-icon {
-  width: 70px;
+  width: 60px;
   margin-bottom: 5px;
   filter: drop-shadow(0 0 6px white);
 }
 
 .timeline-temps {
   display: flex;
-  gap: 40px;
-  font-size: 2em;
+  gap: 30px;
+  font-size: 1.8em;
   text-shadow: 0 0 6px white;
 }
