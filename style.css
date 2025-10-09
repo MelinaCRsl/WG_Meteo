@@ -19,6 +19,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  max-height: 1024px;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -28,8 +29,8 @@ body {
 /* 🧩 Overlay météo */
 .overlay {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 2px;
+  left: 2px;
   width: 100%;
   height: 100%;
   z-index: 1;
