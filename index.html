@@ -1,23 +1,40 @@
 <!DOCTYPE html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Météo - Winter's Gates</title>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	<body>
-		<div class="container">
-			<h1 class="title">Winter's Gate Weather</h1>
-			<div class="meteo-block">
-				<img id="meteo-icon" src="assets/img/dayclear.png" alt="Weather Icon" />
-				<div class="details">
-				<p id="condition">Clear</p>
-				<p id="temperature">27°</p>
-				<img id="unit-icon" src="assets/img/celcius.png" alt="Unit" />
-			</div>
-		</div>
-		<p id="sl-clock">SLT: 12h</p>
-		<p class="rp-label">Last update: 09 October 2025</p>
-	</body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Winter's Gate Weather</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="hud-wrapper">
+    <img src="assets/img/framemeteo.png" alt="WG Frame" class="frame-bg" />
+
+    <div class="overlay">
+      <div class="temps">
+        <div class="temp-block">
+          <p class="temp-label">MIN</p>
+          <p class="temp-value" id="temp-min">71.6°</p>
+          <img src="assets/img/farenheit_mini.png" class="thermo" />
+        </div>
+        <div class="temp-block">
+          <p class="temp-label">MAX</p>
+          <p class="temp-value" id="temp-max">80.6°</p>
+          <img src="assets/img/farenheit_max.png" class="thermo" />
+        </div>
+      </div>
+
+      <div class="timeline">
+        <p class="timeline-title">PREVIOUS (6 NEXT HOURS)</p>
+        <img src="assets/img/partlycloudy.png" class="timeline-icon" />
+        <div class="timeline-temps">
+          <p id="prev-min">71.6°</p>
+          <p id="prev-max">80.6°</p>
+        </div>
+      </div>
+
+      <p id="sl-clock">SLT: 12h</p>
+    </div>
+  </div>
+</body>
 </html>
