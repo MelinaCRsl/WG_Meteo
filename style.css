@@ -20,8 +20,7 @@ body {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 50%;
-	max-height: 1024px;
+	height: 100%;
 	object-fit: cover;
 	z-index: 0;
 }
@@ -41,7 +40,7 @@ body {
 
 /* 🏷️ Titre */
 .hud-title {
-	font-size: 2em;
+	font-size: 50px;
 	font-family: 'Digital7', sans-serif;
 	margin-top: 20px;
 	margin-bottom: 10px;
