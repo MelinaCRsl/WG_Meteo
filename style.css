@@ -28,7 +28,7 @@ body {
   top: 75px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 3em;
+  font-size: 75px;
   text-shadow: 0 0 10px #00ffcc;
   margin: 0;
 }
@@ -61,7 +61,7 @@ body {
 }
 
 .temp-value {
-  font-size: 3em;
+  font-size: 40px;
   text-shadow: 0 0 8px white;
   margin: 0;
 }
