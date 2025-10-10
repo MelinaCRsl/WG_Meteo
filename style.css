@@ -92,8 +92,8 @@ body {
 .timeline {
 	position: relative;
 	top: 274px;
-	left: 432px;
-	width: 550px;
+	left: 530px;
+	width: 450px;
 	height: 192px;
 	background-image: url('assets/img/frameprev.png');
 	background-size: contain;
@@ -139,4 +139,12 @@ body {
 	font-size: 40px;
 	text-shadow: 0 0 6px white;
 	margin-top: 10px;
+}
+
+.temp-value3 {
+	text-shadow: 0 0 8px blue;
+}
+
+.temp-value4 {
+	text-shadow: 0 0 8px red;
 }
