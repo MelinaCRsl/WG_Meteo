@@ -56,7 +56,7 @@ body {
 .temp-block {
   display: flex;
   top: 120px;
-  left: 30px;
+  left: 10px;
   gap: 10px;
 }
 
