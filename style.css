@@ -55,8 +55,8 @@ body {
 
 .weather-desc {
   position: absolute;
-  top: 0px;
-  /*left: 388px;*/
+  top: 125px;
+  left: 388px;
   font-size: 40px;
   text-shadow: 0 0 6px white;
   color: #fff;
