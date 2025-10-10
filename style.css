@@ -60,9 +60,15 @@ body {
   gap: 10px;
 }
 
-.temp-value {
+.temp-value1 {
   font-size: 75px;
-  text-shadow: 0 0 8px white;
+  text-shadow: 0 0 8px blue;
+  margin: 0;
+}
+
+.temp-value2 {
+  font-size: 75px;
+  text-shadow: 0 0 8px red;
   margin: 0;
 }
 
