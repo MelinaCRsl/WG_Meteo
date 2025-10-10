@@ -26,7 +26,7 @@ body {
 .hud-title {
 	position: absolute;
 	top: 30px;
-	left: 55%;
+	left: 50%;
 	transform: translateX(-50%);
 	font-size: 3.5em;
 	text-shadow: 0 0 10px #00ffcc;
@@ -89,10 +89,10 @@ body {
 /* ⏳ Bloc Previous */
 .timeline {
 	position: absolute;
-	bottom: 5px;
+	bottom: 2px;
 	right: 75px;
-	width: 300px;
-	height: 200px;
+	width: 350px;
+	height: 250px;
 	background-image: url('assets/img/frameprev.png');
 	background-size: contain;
 	background-repeat: no-repeat;
