@@ -38,7 +38,7 @@ body {
   position: absolute;
   top: 120px;
   left: 30px;
-  width: 350px;
+  width: 256px;
   filter: drop-shadow(0 0 6px white);
 }
 
@@ -104,6 +104,6 @@ body {
   font-size: 1.8em;
   text-shadow: 0 0 6px white;
 }
-.thermo {
+.thermo2 {
   width: 10px;
 }
