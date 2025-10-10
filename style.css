@@ -1,118 +1,119 @@
 @font-face {
-  font-family: 'Digital7';
-  src: url('assets/fonts/digital-7.ttf') format('truetype');
+	font-family: 'Digital7';
+	src: url('assets/fonts/digital-7.ttf') format('truetype');
 }
 
 body {
-  margin: 50;
-  padding: 50;
-  background-color: #000;
-  font-family: 'Digital7', sans-serif;
-  color: white;
-  overflow: hidden;
+	margin: 50;
+	padding: 50;
+	background-color: #000;
+	font-family: 'Digital7', sans-serif;
+	color: white;
+	overflow: hidden;
 }
 
 .hud-wrapper {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background-image: url('assets/img/framemeteo.png');
-  background-size: cover;
-  background-position: center;
-  box-sizing: border-box;
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	background-image: url('assets/img/framemeteo.png');
+	background-size: cover;
+	background-position: center;
+	box-sizing: border-box;
 }
 
 /* 🏷️ Titre */
 .hud-title {
-  position: absolute;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 3.5em;
-  text-shadow: 0 0 10px #00ffcc;
-  margin: 0;
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 3.5em;
+	text-shadow: 0 0 10px #00ffcc;
+	margin: 0;
 }
 
 /* 🌞 Icône météo principale */
 .weather-icon {
-  position: absolute;
-  top: 120px;
-  left: 10px;
-  width: 400px;
-  filter: drop-shadow(0 0 6px white);
+	position: absolute;
+	top: 120px;
+	left: 10px;
+	width: 400px;
+	filter: drop-shadow(0 0 6px white);
 }
 
 /* 🌡️ Températures min/max */
 .temps {
-  position: absolute;
-  top: 140px;
-  right: 100px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 40px;
+	position: absolute;
+	top: 140px;
+	right: 100px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 40px;
 }
 
 .temp-block {
-  display: flex;
-  top: 120px;
-  left: 10px;
-  gap: 10px;
+	position: relative;
+	display: flex;
+	top: 120px;
+	left: 10px;
+	gap: 10px;
 }
 
 .temp-value1 {
-  font-size: 75px;
-  text-shadow: 0 0 8px blue;
-  margin: 0;
+	font-size: 75px;
+	text-shadow: 0 0 8px blue;
+	margin: 0;
 }
 
 .temp-value2 {
-  font-size: 75px;
-  text-shadow: 0 0 8px red;
-  margin: 0;
+	font-size: 75px;
+	text-shadow: 0 0 8px red;
+	margin: 0;
 }
 
 .thermo {
-  width: 40px;
+	width: 40px;
 }
 
 /* ⏳ Bloc Previous */
 .timeline {
-  position: absolute;
-  bottom: 10px;
-  right: 40px;
-  width: 400px;
-  height: 300px;
-  background-image: url('assets/img/frameprev.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+	position: absolute;
+	bottom: 40px;
+	right: 60px;
+	width: 360px;
+	height: 260px;
+	background-image: url('assets/img/frameprev.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .timeline-title {
-  font-size: 1.2em;
-  margin-bottom: 5px;
-  text-shadow: 0 0 6px #00ffcc;
+	font-size: 1.2em;
+	margin-bottom: 5px;
+	text-shadow: 0 0 6px #00ffcc;
 }
 
 .timeline-icon {
-  width: 60px;
-  margin-bottom: 5px;
-  filter: drop-shadow(0 0 6px white);
+	width: 60px;
+	margin-bottom: 5px;
+	filter: drop-shadow(0 0 6px white);
 }
 
 .thermo2 {
-  width: 20px;
-  height: 30px;
+	width: 20px;
+	height: 30px;
 }
 
 .timeline-temps {
-  display: flex;
-  gap: 5px;
-  font-size: 2.5em;
-  text-shadow: 0 0 6px white;
+	display: flex;
+	gap: 20px;
+	font-size: 2.5em;
+	text-shadow: 0 0 6px white;
 }
