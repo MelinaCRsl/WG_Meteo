@@ -121,6 +121,12 @@ body {
 	filter: drop-shadow(0 0 6px white);
 }
 
+.temp-block2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .separator2 {
 	font-size: 40px;
 	text-shadow: 0 0 8px blue;
@@ -134,7 +140,7 @@ body {
 }
 
 .timeline-temps {
-	display: flex;
+	/*display: flex;*/
 	gap: 20px;
 	font-size: 40px;
 	text-shadow: 0 0 6px white;

@@ -52,6 +52,13 @@ function getUnitFromURL() {
 	return unit === "fahrenheit" ? "fahrenheit" : "celsius";
 }
 
+function isSLNightHourAt(offsetHours = 0) {
+  const now = new Date();
+  const utcHour = now.getUTCHours();
+  const slHour = (utcHour + 16 + offsetHours) % 24;
+  return slHour >= 18 || slHour < 6;
+}
+
 // 🔁 Mise à jour du HUD météo
 async function updateWeatherHUD() {
 	try {
@@ -77,7 +84,8 @@ async function updateWeatherHUD() {
 		}
 		// 🎨 Sélection icône selon heure SL
 		let iconBase = iconMap[code] || "default.png";
-		let icon = isSLNightHour() ? `night${iconBase}` : `day${iconBase}`;
+		let iconMain = isSLNightHourAt(0) ? `night${iconBase}` : `day${iconBase}`;
+		let iconPrev = isSLNightHourAt(6) ? `night${iconBase}` : `day${iconBase}`;
 		// 🔄 Mise à jour DOM
 		const setText = (id, value) => {
 			const el = document.getElementById(id);
@@ -87,7 +95,8 @@ async function updateWeatherHUD() {
 			const el = document.getElementById(id);
 			if (el) el.src = src;
 		};
-		setImage("weather-icon", `assets/img/${icon}`);
+		setImage("weather-icon", `assets/img/${iconMain}`);
+		setImage("prev-icon", `assets/img/${iconPrev}`);
 		setText("temp-min", `${tempMin}°${unitSymbol}`);
 		setText("temp-max", `${tempMax}°${unitSymbol}`);
 		setText("weather-desc", getWeatherDescription(code));
