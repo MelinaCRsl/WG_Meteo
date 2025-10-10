@@ -37,8 +37,8 @@ body {
 .weather-icon {
   position: absolute;
   top: 120px;
-  left: 30px;
-  width: 512px;
+  left: 0px;
+  width: 400px;
   filter: drop-shadow(0 0 6px white);
 }
 
@@ -46,7 +46,7 @@ body {
 .temps {
   position: absolute;
   top: 140px;
-  right: 20px;
+  /*right: 20px;*/
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -106,6 +106,6 @@ body {
   text-shadow: 0 0 6px white;
 }
 .thermo2 {
-  width: 10px;
-  height: 20px;
+  width: 20px;
+  height: 30px;
 }
