@@ -90,7 +90,7 @@ body {
 .timeline {
 	position: relative;
 	top: 250px;
-	left: 300px;
+	left: 600px;
 	width: 400px;
 	height: 300px;
 	background-image: url('assets/img/frameprev.png');
