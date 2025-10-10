@@ -37,7 +37,6 @@ const iconMap = {
   99: "storm.png"      // Severe Thunderstorm
 };
 
-
 function getWeatherDescription(code) {
   const descriptions = {
     0: "Clear Sky",
@@ -69,7 +68,7 @@ function getWeatherDescription(code) {
     96: "Thunderstorm + Hail",
     99: "Severe Thunderstorm"
   };
-  return descriptions[code] || "Unknown";
+  return descriptions[parseInt(code)] || "Unknown";
 }
 
 
@@ -107,6 +106,7 @@ async function updateWeatherHUD() {
 		const weather = data.current_weather;
 		const temperature = weather.temperature;
 		const code = weather.weathercode;
+		const codeInt = parseInt(code);
 		const unit = getUnitFromURL();
 		const unitSymbol = unit === "fahrenheit" ? "F" : "C";
 		// 🌡️ Conversion selon unité
@@ -123,7 +123,7 @@ async function updateWeatherHUD() {
 			prevMax = (temperature + 1).toFixed(1);
 		}
 		// 🎨 Sélection icône selon heure SL
-		let iconBase = iconMap[code] || "default.png";
+		let iconBase = iconMap[codeInt] || "default.png";
 		let iconMain = isSLNightHourAt(0) ? `night${iconBase}` : `day${iconBase}`;
 		let iconPrev = isSLNightHourAt(6) ? `night${iconBase}` : `day${iconBase}`;
 		// 🔄 Mise à jour DOM
@@ -138,7 +138,7 @@ async function updateWeatherHUD() {
 		setImage("weather-icon", `assets/img/${iconMain}`);
 		setText("temp-min", `${tempMin}°${unitSymbol}`);
 		setText("temp-max", `${tempMax}°${unitSymbol}`);
-		setText("weather-desc", getWeatherDescription(code));
+		setText("weather-desc", getWeatherDescription(codeInt));
 		setImage("prev-icon", `assets/img/${iconPrev}`);
 		setText("prev-min", `${prevMin}°${unitSymbol}`);
 		setText("prev-max", `${prevMax}°${unitSymbol}`);
