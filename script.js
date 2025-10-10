@@ -18,6 +18,21 @@ const iconMap = {
 	99: "tornado.png"
 };
 
+function getWeatherDescription(code) {
+  const descriptions = {
+    0: "Clear",
+    1: "Partly Cloudy",
+    2: "Cloudy",
+    45: "Fog",
+    48: "Freezing Fog",
+    61: "Light Rain",
+    71: "Light Snow",
+    97: "Thunderstorm",
+    99: "Tornado"
+  };
+  return descriptions[code] || "Unknown";
+}
+
 // 🕒 Heure SL (GMT-8)
 function getSLHour() {
 	const now = new Date();
@@ -75,6 +90,7 @@ async function updateWeatherHUD() {
 		setImage("weather-icon", `assets/img/${icon}`);
 		setText("temp-min", `${tempMin}°${unitSymbol}`);
 		setText("temp-max", `${tempMax}°${unitSymbol}`);
+		setText("weather-desc", getWeatherDescription(code));
 		setImage("prev-icon", `assets/img/${icon}`);
 		setText("prev-min", `${prevMin}°${unitSymbol}`);
 		setText("prev-max", `${prevMax}°${unitSymbol}`);
