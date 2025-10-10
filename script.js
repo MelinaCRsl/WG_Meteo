@@ -7,30 +7,34 @@ const API_URL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&lon
 
 // 🖼️ Icônes météo selon code Open-Meteo
 const iconMap = {
-	0: "dayclear.png",
-	1: "daypcloudy.png",
-	2: "dayloudy.png",
-	45: "dayfog.png",
-	48: "dayfreezefog.png",
-	61: "dayrain.png",
-	71: "daysnow.png",
-	97: "daystorm.png",
-	90: "nightclear.png",
-	91: "nightpcloudy.png",
-	92: "nightloudy.png",
-	93: "nightfog.png",
-	94: "nightfreezefog.png",
-	95: "nightrain.png",
-	96: "nightsnow.png",
-	98: "nightstorm.png",
+	0: "clear.png",
+	1: "pcloudy.png",
+	2: "cloudy.png",
+	45: "fog.png",
+	48: "freezefog.png",
+	61: "rain.png",
+	71: "snow.png",
+	97: "storm.png",
 	99: "tornado.png"
 };
+
+// 🕒 Heure SL (GMT-8)
+function getSLHour() {
+	const now = new Date();
+	const utcHour = now.getUTCHours();
+	return (utcHour + 16) % 24; // UTC - 8
+}
+
+function isSLNightHour() {
+	const hour = getSLHour();
+	return hour >= 18 || hour < 6;
+}
 
 // 🔍 Récupère l’unité depuis l’URL du MOaP
 function getUnitFromURL() {
 	const params = new URLSearchParams(window.location.search);
 	const unit = params.get("unit");
-	return unit === "fahrenheit" ? "fahrenheit" : "celsius"; // fallback
+	return unit === "fahrenheit" ? "fahrenheit" : "celsius";
 }
 
 // 🔁 Mise à jour du HUD météo
@@ -38,16 +42,13 @@ async function updateWeatherHUD() {
 	try {
 		const response = await fetch(API_URL);
 		const data = await response.json();
-
 		const weather = data.current_weather;
 		const temperature = weather.temperature;
 		const code = weather.weathercode;
-
 		const unit = getUnitFromURL();
-
+		const unitSymbol = unit === "fahrenheit" ? "F" : "C";
 		// 🌡️ Conversion selon unité
 		let tempMin, tempMax, prevMin, prevMax;
-
 		if (unit === "fahrenheit") {
 			tempMin = ((temperature - 2) * 9 / 5 + 32).toFixed(1);
 			tempMax = ((temperature + 2) * 9 / 5 + 32).toFixed(1);
@@ -59,30 +60,27 @@ async function updateWeatherHUD() {
 			prevMin = (temperature - 3).toFixed(1);
 			prevMax = (temperature + 1).toFixed(1);
 		}
-
-		const unitSymbol = unit === "fahrenheit" ? "F" : "C";
-		const icon = iconMap[code] || "default.png";
-
+		// 🎨 Sélection icône selon heure SL
+		let iconBase = iconMap[code] || "default.png";
+		let icon = isSLNightHour() ? `night${iconBase}` : `day${iconBase}`;
 		// 🔄 Mise à jour DOM
 		const setText = (id, value) => {
 			const el = document.getElementById(id);
 			if (el) el.textContent = value;
 		};
-
 		const setImage = (id, src) => {
 			const el = document.getElementById(id);
 			if (el) el.src = src;
 		};
-
 		setImage("weather-icon", `assets/img/${icon}`);
 		setText("temp-min", `${tempMin}°${unitSymbol}`);
 		setText("temp-max", `${tempMax}°${unitSymbol}`);
 		setImage("prev-icon", `assets/img/${icon}`);
 		setText("prev-min", `${prevMin}°${unitSymbol}`);
 		setText("prev-max", `${prevMax}°${unitSymbol}`);
-
-		console.log(`✅ Météo mise à jour (${unitSymbol}) depuis Open-Meteo`);
-	} catch (error) {
+		console.log(`✅ Météo mise à jour (${unitSymbol}) - Heure SL : ${getSLHour()}h`);
+	}
+	catch (error) {
 		console.error("❌ Erreur API Open-Meteo :", error);
 	}
 }
@@ -90,5 +88,5 @@ async function updateWeatherHUD() {
 // 🚀 Lancement au chargement
 document.addEventListener("DOMContentLoaded", updateWeatherHUD);
 
-// ⏱️ Mise à jour toutes les 6h
+// ⏱️ Mise à jour toutes les 6 heures
 setInterval(updateWeatherHUD, 6 * 60 * 60 * 1000);
