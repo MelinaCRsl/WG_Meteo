@@ -55,7 +55,7 @@ body {
 
 .weather-desc {
   position: absolute;
-  top: -5px;
+  top: 0px;
   /*left: 388px;*/
   font-size: 40px;
   text-shadow: 0 0 6px white;
@@ -63,12 +63,21 @@ body {
 }
 
 .temp-value1 {
+	top: 5px;
+	font-size: 60px;
+	text-shadow: 0 0 8px blue;
+	margin: 0;
+}
+
+.separator1 {
+	top: 5px;
 	font-size: 60px;
 	text-shadow: 0 0 8px blue;
 	margin: 0;
 }
 
 .temp-value2 {
+	top: 5px;
 	font-size: 60px;
 	text-shadow: 0 0 8px red;
 	margin: 0;
