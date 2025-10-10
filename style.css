@@ -24,66 +24,69 @@ body {
 
 /* 🏷️ Titre */
 .hud-title {
-	position: absolute;
-	top: 30px;
-	left: 50%;
+	position: relative;
+	top: 47px;
+	left: 262px;
 	transform: translateX(-50%);
-	font-size: 3.5em;
+	font-size: 45px;
 	text-shadow: 0 0 10px #00ffcc;
 	margin: 0;
 }
 
 /* 🌞 Icône météo principale */
 .weather-icon {
-	position: absolute;
-	top: 120px;
-	left: 10px;
-	width: 400px;
+	position: relative;
+	top: 117px;
+	left: 35px;
+	width: 345px;
 	filter: drop-shadow(0 0 6px white);
+}
+
+.temp-block {
+	position: relative;
+	display: flex;
+	top: 117px;
+	left: 382px;
+	width: 465px;
+	height: 154px;
+	gap: 10px;
+}
+
+.weather-desc {
+  position: relative;
+  top: 5px;
+  left: 5px;
+  font-size: 40px;
+  text-shadow: 0 0 6px white;
+  color: #fff;
 }
 
 /* 🌡️ Températures min/max */
 .temps {
-	position: absolute;
-	top: 140px;
-	right: 100px;
+	position: relative;
+	top: 70px;
+	left: 10px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	gap: 40px;
 }
 
-.temp-block {
-	position: relative;
-	display: flex;
-	top: 60px;
-	left: 10px;
-	gap: 10px;
-}
-
-.weather-desc {
-  position: absolute;
-  top: -35px;
-  left: 75px;
-  font-size: 3em;
-  text-shadow: 0 0 6px white;
-  color: #fff;
-}
-
 .temp-value1 {
-	font-size: 80px;
+	font-size: 60px;
 	text-shadow: 0 0 8px blue;
 	margin: 0;
 }
 
 .temp-value2 {
-	font-size: 80px;
+	font-size: 60px;
 	text-shadow: 0 0 8px red;
 	margin: 0;
 }
 
 .thermo {
-	width: 40px;
+	width: 110px;
+	height: 40px;
 }
 
 /* ⏳ Bloc Previous */
