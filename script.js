@@ -96,11 +96,10 @@ async function updateWeatherHUD() {
 			if (el) el.src = src;
 		};
 		setImage("weather-icon", `assets/img/${iconMain}`);
-		setImage("prev-icon", `assets/img/${iconPrev}`);
 		setText("temp-min", `${tempMin}°${unitSymbol}`);
 		setText("temp-max", `${tempMax}°${unitSymbol}`);
 		setText("weather-desc", getWeatherDescription(code));
-		setImage("prev-icon", `assets/img/${icon}`);
+		setImage("prev-icon", `assets/img/${iconPrev}`);
 		setText("prev-min", `${prevMin}°${unitSymbol}`);
 		setText("prev-max", `${prevMax}°${unitSymbol}`);
 		console.log(`✅ Météo mise à jour (${unitSymbol}) - Heure SL : ${getSLHour()}h`);
