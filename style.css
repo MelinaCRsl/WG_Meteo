@@ -107,8 +107,8 @@ body {
 
 .timeline-title {
 	position: absolute;
+	top: 1px;
 	font-size: 30px;
-	margin-top: 1px;
 	text-shadow: 0 0 6px #00ffcc;
 }
 
@@ -124,13 +124,13 @@ body {
 .separator2 {
 	font-size: 40px;
 	text-shadow: 0 0 8px blue;
-	margin: 0;
+	margin: 10px;
 }
 
 .thermo2 {
 	width: 20px;
 	height: 40px;
-	margin-top: 5px;
+	margin-top: 10px;
 }
 
 .timeline-temps {
