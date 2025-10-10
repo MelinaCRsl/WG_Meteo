@@ -106,12 +106,14 @@ body {
 }
 
 .timeline-title {
+	position: absolute;
 	font-size: 30px;
 	margin-top: 1px;
 	text-shadow: 0 0 6px #00ffcc;
 }
 
 .timeline-icon {
+	position: absolute;
 	width: 120px;
 	height: 120px;
 	left: 5px;
@@ -132,7 +134,7 @@ body {
 }
 
 .timeline-temps {
-	/*display: flex;*/
+	display: flex;
 	gap: 20px;
 	font-size: 40px;
 	text-shadow: 0 0 6px white;
