@@ -63,8 +63,8 @@ body {
 
 .weather-desc {
   position: absolute;
-  top: 0px;
-  left: 10px;
+  top: -20px;
+  left: 15px;
   font-size: 3em;
   text-shadow: 0 0 6px white;
   color: #fff;
@@ -113,14 +113,14 @@ body {
 	width: 60px;
 	height: 60px;
 	left: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 0px;
 	filter: drop-shadow(0 0 6px white);
 }
 
 .thermo2 {
 	width: 20px;
 	height: 30px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 .timeline-temps {
