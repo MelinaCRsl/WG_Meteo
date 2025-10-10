@@ -28,7 +28,7 @@ body {
 	top: 47px;
 	left: 262px;
 	/*transform: translateX(-50%);*/
-	font-size: 45px;
+	font-size: 75px;
 	text-shadow: 0 0 10px #00ffcc;
 	margin: 0;
 }
@@ -42,7 +42,7 @@ body {
 	filter: drop-shadow(0 0 6px white);
 }
 
-.temp-block {
+/*.temp-block {
 	position: absolute;
 	display: flex;
 	top: 117px;
@@ -50,7 +50,7 @@ body {
 	width: 465px;
 	height: 154px;
 	gap: 10px;
-}
+}*/
 
 .weather-desc {
   position: absolute;
