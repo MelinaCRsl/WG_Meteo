@@ -42,7 +42,7 @@ function getSLHour() {
 
 function isSLNightHour() {
 	const hour = getSLHour();
-	return hour >= 17 || hour < 5;
+	return hour >= 18 || hour < 6;
 }
 
 // 🔍 Récupère l’unité depuis l’URL du MOaP

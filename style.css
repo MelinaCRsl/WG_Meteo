@@ -92,8 +92,8 @@ body {
 .timeline {
 	position: relative;
 	top: 274px;
-	left: 382px;
-	width: 600px;
+	left: 432px;
+	width: 550px;
 	height: 192px;
 	background-image: url('assets/img/frameprev.png');
 	background-size: contain;
