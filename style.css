@@ -140,7 +140,7 @@ body {
 }
 
 .timeline-temps {
-	/*display: flex;*/
+	display: flex;
 	gap: 20px;
 	font-size: 40px;
 	text-shadow: 0 0 6px white;
