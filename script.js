@@ -90,5 +90,5 @@ async function updateWeatherHUD() {
 // 🚀 Lancement au chargement
 document.addEventListener("DOMContentLoaded", updateWeatherHUD);
 
-// ⏱️ Mise à jour toutes les 15 minutes
-setInterval(updateWeatherHUD, 15 * 60 * 1000);
+// ⏱️ Mise à jour toutes les 6h
+setInterval(updateWeatherHUD, 6 * 60 * 60 * 1000);
