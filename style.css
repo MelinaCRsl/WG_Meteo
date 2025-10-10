@@ -106,35 +106,35 @@ body {
 }
 
 .timeline-title {
-	font-size: 50px;
+	font-size: 30px;
 	margin-top: 1px;
 	text-shadow: 0 0 6px #00ffcc;
 }
 
 .timeline-icon {
-	width: 130px;
-	height: 131px;
+	width: 120px;
+	height: 120px;
 	left: 5px;
 	margin-top: 10px;
 	filter: drop-shadow(0 0 6px white);
 }
 
 .separator2 {
-	font-size: 80px;
+	font-size: 40px;
 	text-shadow: 0 0 8px blue;
 	margin: 0;
 }
 
 .thermo2 {
 	width: 20px;
-	height: 80px;
+	height: 40px;
 	margin-top: 5px;
 }
 
 .timeline-temps {
-	display: flex;
+	/*display: flex;*/
 	gap: 20px;
-	font-size: 80px;
+	font-size: 40px;
 	text-shadow: 0 0 6px white;
 	margin-top: 10px;
 }
