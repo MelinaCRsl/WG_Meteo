@@ -56,7 +56,7 @@ body {
 .temp-block {
 	position: relative;
 	display: flex;
-	top: 120px;
+	top: 60px;
 	left: 10px;
 	gap: 10px;
 }
@@ -89,10 +89,10 @@ body {
 /* ⏳ Bloc Previous */
 .timeline {
 	position: absolute;
-	bottom: 40px;
-	right: 60px;
-	width: 360px;
-	height: 260px;
+	bottom: 5px;
+	right: 75px;
+	width: 600px;
+	height: 300px;
 	background-image: url('assets/img/frameprev.png');
 	background-size: contain;
 	background-repeat: no-repeat;
