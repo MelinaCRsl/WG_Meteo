@@ -37,7 +37,7 @@ body {
 .weather-icon {
   position: absolute;
   top: 120px;
-  left: 0px;
+  left: 5px;
   width: 400px;
   filter: drop-shadow(0 0 6px white);
 }
