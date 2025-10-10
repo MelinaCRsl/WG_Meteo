@@ -38,7 +38,7 @@ body {
   position: absolute;
   top: 120px;
   left: 30px;
-  width: 256px;
+  width: 300px;
   filter: drop-shadow(0 0 6px white);
 }
 
@@ -55,7 +55,8 @@ body {
 
 .temp-block {
   display: flex;
-  align-items: center;
+  top: 120px;
+  left: 30px;
   gap: 10px;
 }
 
@@ -74,8 +75,8 @@ body {
   position: absolute;
   bottom: 40px;
   right: 40px;
-  width: 300px;
-  height: 200px;
+  width: 400px;
+  height: 300px;
   background-image: url('assets/img/frameprev.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -100,10 +101,11 @@ body {
 
 .timeline-temps {
   display: flex;
-  gap: 30px;
+  gap: 5px;
   font-size: 1.8em;
   text-shadow: 0 0 6px white;
 }
 .thermo2 {
   width: 10px;
+  height: 20px;
 }
