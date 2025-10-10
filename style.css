@@ -89,10 +89,10 @@ body {
 /* ⏳ Bloc Previous */
 .timeline {
 	position: relative;
-	top: 250px;
-	left: 600px;
-	width: 400px;
-	height: 300px;
+	top: 274px;
+	left: 382px;
+	width: 600px;
+	height: 192px;
 	background-image: url('assets/img/frameprev.png');
 	background-size: contain;
 	background-repeat: no-repeat;
