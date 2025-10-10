@@ -42,15 +42,6 @@ body {
 	filter: drop-shadow(0 0 6px white);
 }
 
-.weather-desc {
-  position: absolute;
-  top: 126px;
-  left: 388px;
-  font-size: 40px;
-  text-shadow: 0 0 6px white;
-  color: #fff;
-}
-
 /* 🌡️ Températures min/max */
 .temps {
 	position: absolute;
@@ -60,6 +51,15 @@ body {
 	flex-direction: row;
 	align-items: center;
 	gap: 40px;
+}
+
+.weather-desc {
+  position: absolute;
+  /*top: 126px;
+  left: 388px;*/
+  font-size: 40px;
+  text-shadow: 0 0 6px white;
+  color: #fff;
 }
 
 .temp-value1 {
