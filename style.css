@@ -63,9 +63,9 @@ body {
 
 .weather-desc {
   position: absolute;
-  top: 100px;
+  top: 50px;
   right: 100px;
-  font-size: 2em;
+  font-size: 3em;
   text-shadow: 0 0 6px white;
   color: #fff;
 }
@@ -91,8 +91,8 @@ body {
 	position: absolute;
 	bottom: 5px;
 	right: 75px;
-	width: 600px;
-	height: 300px;
+	width: 300px;
+	height: 200px;
 	background-image: url('assets/img/frameprev.png');
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -104,13 +104,15 @@ body {
 }
 
 .timeline-title {
-	font-size: 1.2em;
+	font-size: 1.5em;
 	margin-bottom: 5px;
 	text-shadow: 0 0 6px #00ffcc;
 }
 
 .timeline-icon {
 	width: 60px;
+	height: 60px;
+	left: 5px;
 	margin-bottom: 5px;
 	filter: drop-shadow(0 0 6px white);
 }
@@ -118,6 +120,7 @@ body {
 .thermo2 {
 	width: 20px;
 	height: 30px;
+	margin-bottom: 10px;
 }
 
 .timeline-temps {
@@ -125,4 +128,5 @@ body {
 	gap: 20px;
 	font-size: 2.5em;
 	text-shadow: 0 0 6px white;
+	margin-bottom: 10px;
 }
