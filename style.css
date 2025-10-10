@@ -38,7 +38,7 @@ body {
   position: absolute;
   top: 120px;
   left: 30px;
-  width: 512px;
+  width: 350px;
   filter: drop-shadow(0 0 6px white);
 }
 
@@ -46,7 +46,7 @@ body {
 .temps {
   position: absolute;
   top: 140px;
-  right: 30px;
+  right: 20px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -74,8 +74,8 @@ body {
   position: absolute;
   bottom: 40px;
   right: 40px;
-  width: 260px;
-  height: 140px;
+  width: 300px;
+  height: 200px;
   background-image: url('assets/img/frameprev.png');
   background-size: contain;
   background-repeat: no-repeat;
