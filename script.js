@@ -7,31 +7,71 @@ const API_URL = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&lon
 
 // 🖼️ Icônes météo selon code Open-Meteo
 const iconMap = {
-	0: "clear.png",
-	1: "pcloudy.png",
-	2: "cloudy.png",
-	45: "fog.png",
-	48: "freezefog.png",
-	61: "rain.png",
-	71: "snow.png",
-	97: "storm.png",
-	99: "tornado.png"
+  0: "clear.png",      // Clear
+  1: "clear.png",      // Mainly Clear
+  2: "pcloudy.png",    // Partly Cloudy
+  3: "cloudy.png",     // Overcast
+  45: "fog.png",       // Fog
+  48: "fog.png",       // Rime Fog
+  51: "fog.png",   // Light Drizzle
+  53: "fog.png",   // Moderate Drizzle
+  55: "fog.png",   // Dense Drizzle
+  56: "freezefog.png",   // Freezing Drizzle
+  57: "freezefog.png",   // Heavy Freezing Drizzle
+  61: "rain.png",      // Light Rain
+  63: "rain.png",      // Moderate Rain
+  65: "rain.png",      // Heavy Rain
+  66: "rain.png",      // Freezing Rain
+  67: "rain.png",      // Heavy Freezing Rain
+  71: "snow.png",      // Light Snow
+  73: "snow.png",      // Moderate Snow
+  75: "snow.png",      // Heavy Snow
+  77: "snow.png",      // Snow Grains
+  80: "rain.png",      // Rain Showers
+  81: "rain.png",      // Heavy Rain Showers
+  82: "rain.png",      // Violent Rain Showers
+  85: "snow.png",      // Snow Showers
+  86: "snow.png",      // Heavy Snow Showers
+  95: "storm.png",     // Thunderstorm
+  96: "storm.png",     // Thunderstorm + Hail
+  99: "storm.png"      // Severe Thunderstorm
 };
+
 
 function getWeatherDescription(code) {
   const descriptions = {
-    0: "Clear",
-    1: "Partly Cloudy",
-    2: "Cloudy",
+    0: "Clear Sky",
+    1: "Mainly Clear",
+    2: "Partly Cloudy",
+    3: "Overcast",
     45: "Fog",
-    48: "Freezing Fog",
+    48: "Rime Fog",
+    51: "Light Drizzle",
+    53: "Moderate Drizzle",
+    55: "Dense Drizzle",
+    56: "Freezing Drizzle",
+    57: "Heavy Freezing Drizzle",
     61: "Light Rain",
+    63: "Moderate Rain",
+    65: "Heavy Rain",
+    66: "Freezing Rain",
+    67: "Heavy Freezing Rain",
     71: "Light Snow",
-    97: "Thunderstorm",
-    99: "Tornado"
+    73: "Moderate Snow",
+    75: "Heavy Snow",
+    77: "Snow Grains",
+    80: "Rain Showers",
+    81: "Heavy Rain Showers",
+    82: "Violent Rain Showers",
+    85: "Snow Showers",
+    86: "Heavy Snow Showers",
+    95: "Thunderstorm",
+    96: "Thunderstorm + Hail",
+    99: "Severe Thunderstorm"
   };
   return descriptions[code] || "Unknown";
 }
+
 
 // 🕒 Heure SL (GMT-8)
 function getSLHour() {
