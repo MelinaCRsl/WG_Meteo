@@ -27,7 +27,7 @@ body {
 	position: relative;
 	top: 47px;
 	left: 262px;
-	transform: translateX(-50%);
+	/*transform: translateX(-50%);*/
 	font-size: 45px;
 	text-shadow: 0 0 10px #00ffcc;
 	margin: 0;
